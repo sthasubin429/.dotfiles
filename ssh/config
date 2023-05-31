@@ -10,10 +10,8 @@ Host github.com
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/personal_git
 
-
-<!-- # Bajra GitLab account
+# Bajra GitLab account
 Host git.bajratechnologies.com
   HostName git.bajratechnologies.com
   PreferredAuthentications publickey
-  IdentityFile ~/.ssh/bajra_git -->
-
+  IdentityFile ~/.ssh/bajra_git
