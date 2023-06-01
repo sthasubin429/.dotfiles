@@ -46,6 +46,5 @@ alias gupgrade="commit -t 'Upgrade' -m "
 alias gchore="commit -t 'Chore' -m "
 alias ghelp="commit -h"
 
-
 # Script aliases
 alias update="~/.dotfiles/scripts/update.sh"
