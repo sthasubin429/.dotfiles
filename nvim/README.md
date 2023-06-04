@@ -1,5 +1,7 @@
 # Nvim Config
 
+## Custom Nvim Configuration
+
 - Neo Vim Version
 ```bash
 v0.10.0-dev
