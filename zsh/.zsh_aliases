@@ -1,11 +1,11 @@
 # Docker
-alias dcd='docker-compose -f dcd.yml'
-alias dct='docker-compose -f dct.yml'
-alias dc='docker-compose'
-alias dcweb='docker-compose run web rails'
-alias dctest='docker-compose --profile test run test'
-alias dcv='docker-compose -f docker-compose.dev.yml'
-alias dcvweb='docker-compose -f docker-compose.dev.yml run web rails'
+alias dcd='docker compose -f dcd.yml'
+alias dct='docker compose -f dct.yml'
+alias dc='docker compose'
+alias dcweb='docker compose run web rails'
+alias dctest='docker compose --profile test run test'
+alias dcv='docker compose -f docker-compose.dev.yml'
+alias dcvweb='docker compose -f docker-compose.dev.yml run web rails'
 alias docker-prune="docker image prune -a"
 alias docker-rm-images="docker rmi -f $(docker images -f "dangling=true" -q)"
 
@@ -46,5 +46,7 @@ alias gupgrade="commit -t 'Upgrade' -m "
 alias gchore="commit -t 'Chore' -m "
 alias ghelp="commit -h"
 
-# Script aliases
-alias update="~/.dotfiles/scripts/update.sh"
+# Update
+alias update="sudo apt-get update &&  sudo apt-get upgrade && sudo apt update && sudo apt upgrade && sudo snap refresh && omz update && git -C ~autocomplete pull && sudo apt autoremove && sudo apt clean"
+alias ngUpdate="npm uninstall -g @angular/cli && npm install -g @angular/cli@latest"
+

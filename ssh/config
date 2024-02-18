@@ -1,11 +1,10 @@
-# Outcode GitHub account
-Host github-outcode
-  HostName github.com
-  PreferredAuthentications publickey
-  IdentityFile ~/.ssh/outcode_git
-
 # Personal GitHub account
 Host github.com
   HostName github.com
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/personal_git
+
+Host github-outcode
+  HostName github.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/outcode_git

@@ -37,6 +37,7 @@ local plugins = {
         "tailwindcss-language-server",
         "typescript-language-server",
         "yamlfmt",
+        "bashls",
       }
     }
 
