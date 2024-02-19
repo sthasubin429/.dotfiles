@@ -3,3 +3,14 @@
 	email = 48222247+sthasubin429@users.noreply.github.com
 [init]
 	defaultBranch = main
+[alias]
+	staash = stash --include-untracked
+[rerere]
+	enabled = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[maintenance]
+	repo = /home/kamekaze/outcode/eventflo-frontend
+	repo = /home/kamekaze/outcode/eventflo-backend

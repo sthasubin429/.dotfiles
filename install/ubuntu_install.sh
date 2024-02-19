@@ -98,6 +98,9 @@ docker-compose --version
 figlet "CodeClimate"
 cd codeclimate-* && sudo make install
 
+# Starship theme
+curl -sS https://starship.rs/install.sh | sh
+
 # Auto Remove
 sudo apt autoremove
 

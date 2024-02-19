@@ -5,6 +5,9 @@
 # zsh
 ln -s ~/.dotfiles/zsh/.bashrc ~/.bashrc
 ln -s ~/.dotfiles/zsh/.zsh_aliases ~/.zsh_aliases
+ln -s ~/.dotfiles/zsh/.zsh_install ~/.zsh_install
+ln -s ~/.dotfiles/zsh/.zsh_precmd ~/.zsh_precmd
+ln -s ~/.dotfiles/zsh/starship.toml ~/.config/starship.toml
 ln -s ~/.dotfiles/zsh/.zshrc ~/.zshrc
 
 
@@ -35,4 +38,3 @@ ln -s ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 
 # NvChad Customization
 ln -s ~/.dotfiles/nvchad/custom ~/.config/nvim/lua/
-

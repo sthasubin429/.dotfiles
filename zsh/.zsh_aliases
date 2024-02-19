@@ -20,11 +20,6 @@ alias gitoutcode='git config user.email "127188945+SubinShrestha-Outcode@users.n
 alias gitcm='git commit -m'
 alias gitlo='git log --graph --decorate --oneline'
 
-# Check before adding alias
-if [ -d .git ]; then
-  alias gitso="git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)"
-fi;
-
 # Code Climate
 alias cca='codeclimate analyze'
 
@@ -47,6 +42,5 @@ alias gchore="commit -t 'Chore' -m "
 alias ghelp="commit -h"
 
 # Update
-alias update="sudo apt-get update &&  sudo apt-get upgrade && sudo apt update && sudo apt upgrade && sudo snap refresh && omz update && git -C ~autocomplete pull && sudo apt autoremove && sudo apt clean"
+alias update="sudo apt-get update &&  sudo apt-get upgrade && sudo apt update && sudo apt upgrade && sudo snap refresh && omz update && git -C ~autocomplete pull && sudo apt autoremove && sudo apt clean -y"
 alias ngUpdate="npm uninstall -g @angular/cli && npm install -g @angular/cli@latest"
-

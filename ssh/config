@@ -8,3 +8,13 @@ Host github-outcode
   HostName github.com
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/outcode_git
+
+Host eventflo-staging-frontend
+  Hostname 100.20.180.81
+  User ubuntu
+  IdentityFile ~/.ssh/eventflo.pem
+
+Host eventflo-staging-backend
+  Hostname 52.33.249.128
+  User ubuntu
+  IdentityFile ~/.ssh/eventflo.pem
