@@ -99,6 +99,7 @@ figlet "CodeClimate"
 cd codeclimate-* && sudo make install
 
 # Starship theme
+figlet "StarShip"
 curl -sS https://starship.rs/install.sh | sh
 
 # Auto Remove

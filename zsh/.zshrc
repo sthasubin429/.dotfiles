@@ -71,10 +71,11 @@ ZSH_THEME=""
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 # User configuration
 
@@ -108,3 +109,6 @@ source ~/.zsh_install
 precmd(){
   source ~/.zsh_precmd
 }
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
