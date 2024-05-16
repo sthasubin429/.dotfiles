@@ -17,6 +17,7 @@ alias gitc='git config --list'
 alias gitpersonal='git config user.email "48222247+sthasubin429@users.noreply.github.com"'
 alias gitbajra='git config user.email "subinshrestha2@bajratechnologies.com"'
 alias gitoutcode='git config user.email "127188945+SubinShrestha-Outcode@users.noreply.github.com"'
+alias gitfetchly='git config user.email "166415037+subinsth@users.noreply.github.com"'
 alias gitcm='git commit -m'
 alias gitlo='git log --graph --decorate --oneline'
 
