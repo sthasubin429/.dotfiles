@@ -12,7 +12,6 @@ Help() {
   echo
   echo "OPTIONS:"
   echo "h       Print this help"
-  echo "d       Description for commit message [optional]"
   echo
   echo "Command:"
   echo "      gcommit \"Commit Message\" \"Description\""

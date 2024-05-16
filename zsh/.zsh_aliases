@@ -42,6 +42,9 @@ alias gupgrade="commit -t 'Upgrade' -m "
 alias gchore="commit -t 'Chore' -m "
 alias ghelp="commit -h"
 
+# Fetchly git aliases
+alias gcommit="gcommit"
+
 # Update
 alias update="sudo apt-get update &&  sudo apt-get upgrade && sudo apt update && sudo apt upgrade && sudo snap refresh && omz update && git -C ~autocomplete pull && sudo apt autoremove && sudo apt clean -y"
 alias ngUpdate="npm uninstall -g @angular/cli && npm install -g @angular/cli@latest"
