@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Download the file “gcommit”
+# Paste the file in your “/usr/local/bin/” (for Linux and mac)
+# Run the command: chmod +x commit (might need to use sudo) inside “/usr/local/bin/” to make “gcommit” file executable.
+# You can now use gcommit -h to view all the available commands.
+
+Help() {
+  echo "Format your commit message as below: when branch name is 123-test-branch:"
+  echo "    [#ID]: commit message"
+  echo
+  echo
+  echo "OPTIONS:"
+  echo "h       Print this help"
+  echo "d       Description for commit message [optional]"
+  echo
+  echo "Command:"
+  echo "      gcommit \"Commit Message\" \"Description\""
+  echo "      gcommit -h "
+  echo
+  echo "Commit Message Output:"
+  echo "      [#123]: Commit Message"
+  echo
+  echo
+}
+
+if [[ $1 = "-h" || $1 = "--help" ]]; then
+  Help
+  exit
+fi
+
+BRANCH_NAME=$(git symbolic-ref --short HEAD)
+
+IFS='-'                         # setting - as delimiter
+read -ra ADDR <<<"$BRANCH_NAME" # SPLITTING THE TEXT
+
+ID="${ADDR[0]}"
+
+git commit -m "[#$ID] $1" -m "$2"
