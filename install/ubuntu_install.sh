@@ -37,7 +37,7 @@ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer
 # docker and docker-compose
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
-sudo curl -L "https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose # change to latest version
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.27.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose # change to latest version
 
 # codeclimate
 curl -L https://github.com/codeclimate/codeclimate/archive/master.tar.gz | tar xvz
@@ -92,7 +92,7 @@ sudo usermod -aG docker ${USER} # set your username here
 
 # Docker Compose
 sudo chmod +x /usr/local/bin/docker-compose
-docker-compose --version
+docker compose --version
 
 # CodeClimate
 figlet "CodeClimate"
