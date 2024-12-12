@@ -38,3 +38,4 @@ ln -s ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 
 # NvChad Customization
 ln -s ~/.dotfiles/nvchad/custom ~/.config/nvim/lua/
+ln -s ~/.dotfiles/nvchad/lua ~/.config/nvim/

@@ -1,17 +1,18 @@
-local plugins = {
+return {
   {
-    "wakatime/vim-wakatime",
-    lazy = false,
-    priority = 1000
+    "stevearc/conform.nvim",
+    -- event = 'BufWritePre', -- uncomment for format on save
+    opts = require "configs.conform",
   },
+
+  -- These are some examples, uncomment them if you want to see them work!
   {
-    "nvim-telescope/telescope.nvim",
-    lazy = false,
+    "neovim/nvim-lspconfig",
     config = function()
-      require "plugins.configs.telescope"
-      require "custom.configs.telescope"
+      require "configs.lspconfig"
     end,
   },
+
   {
    "williamboman/mason.nvim",
     opts = {
@@ -41,7 +42,15 @@ local plugins = {
       }
     }
 
-  }
-}
+  },
 
-return plugins
+  -- {
+  -- 	"nvim-treesitter/nvim-treesitter",
+  -- 	opts = {
+  -- 		ensure_installed = {
+  -- 			"vim", "lua", "vimdoc",
+  --      "html", "css"
+  -- 		},
+  -- 	},
+  -- },
+}

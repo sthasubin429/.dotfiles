@@ -1,0 +1,56 @@
+#!/bin/bash
+
+if [ $# -ne 2 ]
+then
+  echo "Usage: $0 dump_file.sql.gz database_name"
+  exit 1
+fi
+
+dump_file=$1
+db_name=$2
+port=${3:-5432}
+
+# Function to run PostgreSQL commands
+run_psql() {
+  PGPASSWORD=postgres psql -h localhost -p $port -U postgres "$@"
+}
+
+# Check if the database exists
+db_exists=$(run_psql -tAc "SELECT 1 FROM pg_database WHERE datname='$db_name'")
+
+if [ -z "$db_exists" ]; then
+  echo "Database $db_name does not exist. Creating it now."
+  run_psql -c "CREATE DATABASE $db_name;"
+else
+  echo "Database $db_name already exists."
+fi
+
+# Function to run PostgreSQL commands on the specified database
+run_psql_db() {
+  run_psql -d "$db_name" "$@"
+}
+
+echo "Dropping and recreating schema"
+
+public_exists=$(run_psql_db -tAc "SELECT schema_name FROM information_schema.schemata WHERE schema_name = 'public';" | grep -c "public")
+oems_exists=$(run_psql_db -tAc "SELECT schema_name FROM information_schema.schemata WHERE schema_name = 'oems';" | grep -c "oems")
+looker_exists=$(run_psql_db -tAc "SELECT schema_name FROM information_schema.schemata WHERE schema_name = 'looker_scratch';" | grep -c "looker_scratch")
+
+if [ $public_exists -eq 1 ]; then
+  run_psql_db -c "DROP SCHEMA public CASCADE;"
+fi
+
+run_psql_db -c "CREATE SCHEMA public;"
+
+if [ $oems_exists -eq 1 ]; then
+  run_psql_db -c "DROP SCHEMA oems CASCADE;"
+fi
+
+if [ $looker_exists -eq 1 ]; then
+  run_psql_db -c "DROP SCHEMA looker_scratch CASCADE;"
+fi
+
+echo "Importing dump"
+zcat $dump_file | pv | run_psql_db > /dev/null
+
+echo "Import completed successfully."

@@ -1,7 +1,56 @@
+# Inital Install
+- Run ubuntu_install.sh from home directory
+    - Change Docker version in file
+- Run clones.sh
+- Run links.sh
+
+# Install Zsh
+```sh
+sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+```
+
+# Install Rust
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+# install zoxide
+```sh
+cargo install zoxide --locked
+```
+
+# Install Docker
+```sh
+apt-cache policy docker-ce
+```
+```sh
+sudo apt install docker-ce -y
+```
+
+# Executing docker without sudo
+```sh
+sudo usermod -aG docker ${USER}
+su - ${USER}
+groups
+sudo usermod -aG docker ${USER} # set your username here
+```
+
+# Docker Compose
+```sh
+sudo chmod +x /usr/local/bin/docker-compose
+docker compose version
+```
+
+# CodeClimate
+```sh
+cd codeclimate-* && sudo make install
+```
+
 # Install Nvm
 ```sh
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 ```
+
 # Paste this in .zshrc file
 ```js
 export NVM_DIR="$HOME/.nvm"
@@ -31,11 +80,37 @@ npm install -g @angular/cli
 source <(ng completion script)
 ```
 
+# Github SSH keys
+
+## Personal GitHub
+```sh
+ssh-keygen -t ed25519 -C "subinshrestha429@gmail.com" -f ~/.ssh/personal_git
+```
+
+## Outcode GitHub
+```sh
+ssh-keygen -t ed25519 -C "subin@fetch.ly" -f ~/.ssh/fetchly_git
+```
+- Add the Public keys to respective github accounts
+
+## Fetchly GitHub
+```sh
+ssh-keygen -t ed25519 -C "subin.shrestha@outcodesoftware.com" -f ~/.ssh/outcode_git
+```
+
+# Tmux configuration
+- Open emux
+- Source File
+```sh
+tmux source ~/.tmux.conf
+```
+- Install TPM packages using Prefix + I (Ctrl + A and Shift + I)
+
+
+# Nvim Install
 
 # Spaceship theme for Zsh
-
 [Spaceship](https://github.com/spaceship-prompt/spaceship-prompt)
-
 
 # Docker install
 [Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)

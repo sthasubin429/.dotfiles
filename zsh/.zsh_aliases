@@ -27,7 +27,7 @@ alias cca='codeclimate analyze'
 # Other
 alias c='clear'
 alias o='open .'
-alias zshr="source ~/.zshrc" #refereshes zshrc file
+alias zshr="source ~/.zshrc"        #refereshes zshrc file
 alias cpid="sudo rm -rf tmp/pids/*" #deletes pids
 alias vim='nvim'
 
@@ -46,5 +46,6 @@ alias ghelp="commit -h"
 alias gcommit="gcommit"
 
 # Update
-alias update="sudo apt-get update &&  sudo apt-get upgrade && sudo apt update && sudo apt upgrade && sudo snap refresh && omz update && git -C ~autocomplete pull && sudo apt autoremove && sudo apt clean -y"
+alias update="sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y dist-upgrade && sudo apt-get -y autoremove && sudo apt-get -y clean && sudo apt update -y && sudo apt upgrade -y && sudo snap refresh && omz update && git -C ~autocomplete pull && sudo apt autoremove && sudo apt clean"
+
 alias ngUpdate="npm uninstall -g @angular/cli && npm install -g @angular/cli@latest"

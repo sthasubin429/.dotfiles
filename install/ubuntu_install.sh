@@ -10,9 +10,9 @@ echo "#############################################"
 # Basic installation
 sudo apt update && sudo apt upgrade
 sudo apt-get update
-sudo apt install figlet zsh git neofetch htop bpytop tmux curl autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev \
+sudo apt install -y figlet zsh git neofetch htop bpytop tmux curl autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev \
                   libgdbm6 libgdbm-dev libdb-dev apt-transport-https ca-certificates curl software-properties-common
-sudo apt-get install wget gpg ripgrep
+sudo apt-get install -y wget gpg ripgrep xclip
 
 # adding packages
 #VS Code
@@ -37,7 +37,7 @@ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer
 # docker and docker-compose
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
-sudo curl -L "https://github.com/docker/compose/releases/download/v2.27.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose # change to latest version
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose # change to latest version
 
 # codeclimate
 curl -L https://github.com/codeclimate/codeclimate/archive/master.tar.gz | tar xvz
@@ -45,10 +45,6 @@ curl -L https://github.com/codeclimate/codeclimate/archive/master.tar.gz | tar x
 # Update list
 sudo apt update && sudo apt upgrade
 sudo apt-get update
-
-# Zsh
-figlet "Zsh"
-sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 # VS Code
 figlet "VsCode"
@@ -77,30 +73,14 @@ rbenv install 3.2.2
 ## update ruby global version
 rbenv global 3.2.2
 
-# Docker
-figlet "Docker"
-
-# Install Docker
-apt-cache policy docker-ce
-sudo apt install docker-ce -y
-
-# Executing docker without sudo
-sudo usermod -aG docker ${USER}
-su - ${USER}
-groups
-sudo usermod -aG docker ${USER} # set your username here
-
-# Docker Compose
-sudo chmod +x /usr/local/bin/docker-compose
-docker compose --version
-
-# CodeClimate
-figlet "CodeClimate"
-cd codeclimate-* && sudo make install
-
 # Starship theme
 figlet "StarShip"
 curl -sS https://starship.rs/install.sh | sh
+
+# pyenv
+figlet "PyEnv"
+curl https://pyenv.run | bash
+
 
 # Auto Remove
 sudo apt autoremove
